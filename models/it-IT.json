@@ -63,6 +63,8 @@
 						}
 					],
 					"samples": [
+						"descrizione",
+						"dammi più informazioni",
 						"cos'è il prodotto {product}",
 						"voglio sapere di più del prodotto {product}",
 						"dammi più informazioni su {product}",
@@ -190,7 +192,7 @@
 			"intents": [
 				{
 					"name": "DescribeProductIntent",
-					"delegationStrategy": "SKILL_RESPONSE",
+                    "delegationStrategy": "ALWAYS",
 					"confirmationRequired": false,
 					"prompts": {},
 					"slots": [
@@ -198,8 +200,10 @@
 							"name": "product",
 							"type": "productType",
 							"confirmationRequired": false,
-							"elicitationRequired": false,
-							"prompts": {}
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.593674792803.723737651317"
+							}
 						}
 					]
 				},
@@ -222,6 +226,7 @@
 				},
 				{
 					"name": "RefundProductIntent",
+					"delegationStrategy": "ALWAYS",
 					"confirmationRequired": false,
 					"prompts": {},
 					"slots": [
