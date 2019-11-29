@@ -67,14 +67,7 @@
                     "slots": [
                         {
                             "name": "product",
-                            "type": "productType",
-                            "samples": [
-                                "plus d'information sur {product}",
-                                "{product}",
-                                "le {product}",
-                                "le produit {product}",
-                                "description {product}"
-                            ]
+                            "type": "productType"
                         }
                     ],
                     "samples": [
@@ -208,7 +201,7 @@
             "intents": [
                 {
                     "name": "DescribeProductIntent",
-                    "delegationStrategy": "ALWAYS",
+                    "delegationStrategy": "SKILL_RESPONSE",
                     "confirmationRequired": false,
                     "prompts": {},
                     "slots": [
@@ -216,10 +209,8 @@
                             "name": "product",
                             "type": "productType",
                             "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "Elicit.Slot.593674792803.723737651317"
-                            }
+                            "elicitationRequired": false,
+                            "prompts": {}
                         }
                     ]
                 },
